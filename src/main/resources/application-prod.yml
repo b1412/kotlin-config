@@ -1,0 +1,6 @@
+spring:
+    cloud:
+        config:
+            server:
+                native:
+                    searchLocations: classpath:native-properties/common/,classpath:native-properties/prod/

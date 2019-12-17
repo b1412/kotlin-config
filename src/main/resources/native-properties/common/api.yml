@@ -1,0 +1,6 @@
+mvc:
+  action:
+    report:
+      switcher: false
+      visit-record: false
+      firewall: false

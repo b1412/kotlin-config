@@ -1,0 +1,9 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+  server:
+    eviction-interval-timer-in-ms: 5000
+    enable-self-preservation: true
+
+

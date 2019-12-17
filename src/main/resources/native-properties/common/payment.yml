@@ -1,0 +1,12 @@
+aliPayNotifyUrl: https://api-dev.leyovisa.com/payment/notify/alipay
+pxpayFailedUrl: http://dev.leyovisa.com/payment/anonymous/feedback/fail
+pxpayNotificationUrl: https://api-dev.leyovisa.com/payment/notify/pxpay
+pxpaySuccessUrl: http://dev.leyovisa.com/payment/anonymous/feedback/success
+wechatPayNotifyUrl: https://api-dev.leyovisa.com/payment/notify/wechat
+
+latipay-api-url: https://api-staging.latipay.net
+
+
+
+
+

@@ -1,0 +1,17 @@
+management:
+    security:
+        enabled: true
+security:
+    user:
+        name: leonzhou
+        password: configpassword
+server:
+    port: 7777
+spring:
+    application:
+        name: config
+    cloud:
+        config:
+            enabled: false
+    profiles:
+        active: native,local

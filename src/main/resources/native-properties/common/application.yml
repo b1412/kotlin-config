@@ -1,0 +1,118 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+ribbon:
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+  eureka:
+    enabled: true
+eureka:
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    healthcheck:
+      enabled: true
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 15
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+security:
+  basic:
+    enabled: false
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: intelliware.ltd@gmail.com
+    password: qavwgfdvwhbcxndk
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://fx-mysql:3306/fx?autoReconnect=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        format_sql: true
+        enable_lazy_load_no_trans: true
+    show-sql: true
+  session:
+    store-type: redis
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  aop:
+    proxy-target-class: true
+  redis:
+    host: fx-redis
+
+
+server:
+  tomcat:
+    max-threads: 500
+    min-spare-threads: 20
+    uri-encoding: UTF-8
+
+#aws:
+#  s3:
+#    bucket-name: cfg-attachments
+#    access-key: AKIAIIQXOFVGZ5LKY46Q
+#    secret-key: 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
+#    region-link: https://s3-ap-southeast-2.amazonaws.com
+#    key: fx/
+aws:
+  s3:
+    bucket-name: intelliware-files
+    access-key: AKIAJ7XIHWKK2DG7EIEA
+    secret-key: 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
+    region-link: https://s3-ap-southeast-2.amazonaws.com
+    key: mall/
+
+
+app:
+  user-cookie: fx_user
+  user-class: intelliware.fx.entity.AppUser
+  jwt:
+    header: Authorization
+    # in seconds,10 days
+    expires-in: 864000
+    secret: fx_secret
+    cookie: AUTH-TOKEN
+    param: token
+    anonymous-urls: /payment/latipay/notify,/payment/polipay/success,/payment/polipay/fail,/payment/polipay/notify,/payment/query,/payment/gateway-query,/payment/payment-order-query,/social/**,/quartz/*,/signin/**,/v1/transaction-single/redirect,/v1/transaction-single/check-transaction-single-paid,/v1/send-email/**,/v1/user/register,/v1/user/my-register,/druid/**,/v1/user-guide,/v1/image,/files/*,/images/mail/*,/v1/setting/active,/v1/find-pwd-send-log/**/*,/meta/**,/health,/health/,/info,/metrics,/trace,/auditevents,/dump,/env,/loggers,/loggers/*,/jolokia,/heapdump,/logfile,/liquibase,/flyway,/jolokia
+  user:
+    need-verify: false
+sms:
+  clicktale:
+    api-url:  https://platform.clickatell.com/messages/http/send
+    api-key:  M7-yLhhQTxyDrRLimHnI5Q==
+  clicksend:
+    api-url: https://api-mapper.clicksend.com/http/v2/send.php
+    api-key: B040FDA7-D67A-18A9-1C2E-A357EFD2F192
+    username: scottcampbell07
+
+api-gateway-url: http://localhost:9999
