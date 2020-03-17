@@ -59,17 +59,3 @@ server:
     max-threads: 500
     min-spare-threads: 20
     uri-encoding: UTF-8
-
-app:
-  user-cookie: fx_user
-  user-class: intelliware.fx.entity.AppUser
-  jwt:
-    header: Authorization
-    # in seconds,10 days
-    expires-in: 864000
-    secret: fx_secret
-    cookie: AUTH-TOKEN
-    param: token
-    anonymous-urls: /payment/latipay/notify,/payment/polipay/success,/payment/polipay/fail,/payment/polipay/notify,/payment/query,/payment/gateway-query,/payment/payment-order-query,/social/**,/quartz/*,/signin/**,/v1/transaction-single/redirect,/v1/transaction-single/check-transaction-single-paid,/v1/send-email/**,/v1/user/register,/v1/user/my-register,/druid/**,/v1/user-guide,/v1/image,/files/*,/images/mail/*,/v1/setting/active,/v1/find-pwd-send-log/**/*,/meta/**,/health,/health/,/info,/metrics,/trace,/auditevents,/dump,/env,/loggers,/loggers/*,/jolokia,/heapdump,/logfile,/liquibase,/flyway,/jolokia
-  user:
-    need-verify: false
