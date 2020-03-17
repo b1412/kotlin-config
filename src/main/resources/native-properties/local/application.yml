@@ -1,7 +1,7 @@
 eureka:
     client:
         serviceUrl:
-            defaultZone: http://kotlin-eureka:8761/eureka/
+            defaultZone: http://eureka:8761/eureka/
 log:
     path: ./logs
 
