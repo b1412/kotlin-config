@@ -4,7 +4,7 @@ MAINTAINER zhouleib1412@gmail.com
 ENV APP_ROOT /opt/config
 ENV APP_VERSION 0.0.1
 ARG BUILD_NUMBER=SNAPSHOT
-ENV SPRING_BOOT_PROFILE --spring.profiles.active=prod
+ENV SPRING_BOOT_PROFILE --spring.profiles.active=prod,native
 ENV JAVA_OPTS -server -Xmx64m -Xms64m
 
 RUN mkdir -p ${APP_ROOT}/etc ${APP_ROOT}/lib ${APP_ROOT}/bin
