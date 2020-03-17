@@ -5,3 +5,5 @@ eureka:
   server:
     eviction-interval-timer-in-ms: 5000
     enable-self-preservation: true
+  instance:
+    hostname: eureka
