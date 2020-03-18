@@ -11,16 +11,20 @@ ribbon:
   ReadTimeout: 60000
   eureka:
     enabled: true
+
 eureka:
   client:
     region: default
     registryFetchIntervalSeconds: 5
     healthcheck:
       enabled: true
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
   instance:
     preferIpAddress: true
     leaseRenewalIntervalInSeconds: 5
     leaseExpirationDurationInSeconds: 15
+
 management:
   security:
     enabled: false
