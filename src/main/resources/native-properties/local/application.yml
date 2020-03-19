@@ -4,3 +4,8 @@ log:
 spring:
     profiles:
         active: local
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://eureka/eureka/
