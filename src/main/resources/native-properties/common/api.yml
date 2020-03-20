@@ -19,8 +19,6 @@ spring:
     lazy-initialization: true
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
-server:
-  port: 8080
 cannon:
   jwt:
     anonymousUrls: /v1/login,/graphiql,/graphql,/vendor/**,/v1/menu/**
