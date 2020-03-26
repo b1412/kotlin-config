@@ -1,0 +1,28 @@
+spring:
+  redis:
+    host: redis
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/payment?characterEncoding=utf8&useSSL=false
+    username: root
+    password: cannon
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: true
+  profiles:
+    active: local
+  main:
+    lazy-initialization: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+cannon:
+  jwt:
+    anonymousUrls: /v1/login,/graphiql,/graphql,/vendor/**,/v1/menu/**
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
